@@ -55,7 +55,16 @@ public class SecondServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       //get form data	
+  	  String u =request.getParameter("user");
+  	  String p=request.getParameter("pass");
+
+	  response.setContentType("text/html");
+     	  PrintWriter out = response.getWriter();
+      	  out.println("<html><body>");
+      	  out.println("<h1>You sent me:</h1>");
+  	  out.println(u+"<br>"+p);
+  	  out.println("</body></html>");
     }
 
     /**
