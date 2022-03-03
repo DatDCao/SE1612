@@ -4,6 +4,7 @@
     Author     : docao
 --%>
 
+<%@taglib uri =  "/WEB-INF/tlds/mytag.tld" prefix="m"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,23 +13,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <%! String destin; %>
-        <%! public String getDestination() {
-                return destin;
-            }%>
-        <%--<%! // Circle a = new Circle(2.0);%>--%>
+        <h1>Current Date: <m:Mytag/></h1>
         
-        <%! String name = new String("JSP World"); %>
-        <%! public String getName() {
-                return name;
-            }%>
-        <B><%= getName()%></B>
-        
-            <%
-                String var1 = request.getParameter("name");
-                out.println(var1);
-            %>
 
     </body>
 </html>
