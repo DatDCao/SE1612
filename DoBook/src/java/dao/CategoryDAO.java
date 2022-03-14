@@ -29,7 +29,8 @@ public class CategoryDAO {
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {                
-                Category category = new Category(rs.getInt(1), rs.getString(2));
+//                Category category = Category.builder().build().(rs.getInt(1), rs.getString(2));
+    Category category = Category.builder().id(rs.getInt(1)).name(rs.getString(2)).build();
                 list.add(category);
             }
         } catch (Exception ex) {
