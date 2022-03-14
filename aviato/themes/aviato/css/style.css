@@ -653,14 +653,14 @@ input[type="tel"]:focus {
   padding: 10px 10px;
 }
 
-.commonAccordion .panel .panel-title a:before,
+/* .commonAccordion .panel .panel-title a:before,
 .commonAccordion-2 .panel .panel-title a:before {
   color: #555;
   content: "\f209";
   position: absolute;
   right: 25px;
   font-family: "themefisher-font";
-}
+} */
 
 .commonAccordion .panel .panel-title a.collapsed:before,
 .commonAccordion-2 .panel .panel-title a.collapsed:before {

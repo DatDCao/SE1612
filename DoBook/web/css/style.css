@@ -653,14 +653,14 @@ input[type="tel"]:focus {
   padding: 10px 10px;
 }
 
-.commonAccordion .panel .panel-title a:before,
+/*.commonAccordion .panel .panel-title a:before,
 .commonAccordion-2 .panel .panel-title a:before {
   color: #555;
   content: "\f209";
   position: absolute;
   right: 25px;
   font-family: "themefisher-font";
-}
+}*/
 
 .commonAccordion .panel .panel-title a.collapsed:before,
 .commonAccordion-2 .panel .panel-title a.collapsed:before {
@@ -2186,8 +2186,8 @@ input[type="tel"]:focus {
 .widget .widget-title {
   margin: 0;
   padding-bottom: 15px;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
