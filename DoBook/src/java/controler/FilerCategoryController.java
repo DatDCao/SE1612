@@ -21,7 +21,7 @@ import model.Product;
  *
  * @author docao
  */
-public class Shop_slidebarController extends HttpServlet {
+public class FilerCategoryController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,12 +35,14 @@ public class Shop_slidebarController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        List<Category> listCategories = new CategoryDAO().getAllCategories();
-        List<Product> listProducts = new ProductDAO().getAllProducts();
         
+        List<Category> listCategories = new CategoryDAO().getAllCategories();
         request.setAttribute("listCategories", listCategories);
-        request.setAttribute("listProducts", listProducts);
-         request.getRequestDispatcher("shop-slidebar.jsp").forward(request, response);
+        
+        int categoryId = Integer.parseInt(request.getParameter("categoryId"));
+        List<Product> listProduct = new ProductDAO().getProductsByCategoryID(categoryId);
+        request.setAttribute("listProducts", listProduct);
+        request.getRequestDispatcher("shop-slidebar.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

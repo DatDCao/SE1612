@@ -1161,7 +1161,7 @@ input[type="tel"]:focus {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: #000;
+  background: #ad0000;
   color: #fff;
   font-size: 12px;
   padding: 4px 12px;

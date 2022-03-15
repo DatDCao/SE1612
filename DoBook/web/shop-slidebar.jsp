@@ -459,329 +459,60 @@
                                 >
                                 <!--hien ra list categories-->
                                 <c:forEach items="${listCategories}" var="C">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="headingOne">
-                                        <h4 class="panel-title">
-                                            <a
-                                                role="button"
-                                                data-toggle="collapse"
-                                                data-parent="#accordion"
-                                                href="#collapseOne"
-                                                aria-expanded="true"
-                                                aria-controls="collapseOne"
-                                                >
-                                                 ${C.name}
-                                            </a>
-                                        </h4>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                            <h4 class="panel-title">
+                                                <a
+                                                    href="filter-category?categoryId=${C.id}"
+                                                    >
+                                                    ${C.name}
+                                                </a>
+                                            </h4>
+                                        </div> 
                                     </div> 
-                                </div> 
                                 </c:forEach>
-                                
-                                
                             </div>
                         </div>
                     </div>
                     <div class="col-md-9">
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-thumb">
-                                        <span class="bage">Sale</span>
-                                        <img
-                                            class="img-responsive"
-                                            src="images/shop/products/product-1.jpg"
-                                            alt="product-img"
-                                            />
-                                        <div class="preview-meta">
-                                            <ul>
-                                                <li>
-                                                    <span
-                                                        data-toggle="modal"
-                                                        data-target="#product-modal"
-                                                        >
-                                                        <i class="tf-ion-ios-search-strong"></i>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"><i class="tf-ion-ios-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                                                </li>
-                                            </ul>
+                            <c:forEach items="${listProducts}" var="P">
+                                <div class="col-md-4">
+                                    <div class="product-item">
+                                        <div class="product-thumb">
+                                            <span class="bage">Sale</span>
+                                            <img
+                                                class="img-responsive"
+                                                src="${P.imageUrl}"
+                                                alt="product-img"
+                                                />
+                                            <div class="preview-meta">
+                                                <ul>
+                                                    <li>
+                                                        <span
+                                                            data-toggle="modal"
+                                                            data-target="#product-modal"
+                                                            >
+                                                            <i class="tf-ion-ios-search-strong"></i>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#!"><i class="tf-ion-ios-heart"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#!"><i class="tf-ion-android-cart"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h4><a href="product-single.html">${P.name}</a></h4>
+                                            <p class="price">$${P.price}</p>
                                         </div>
                                     </div>
-                                    <div class="product-content">
-                                        <h4><a href="product-single.html">Reef Boardsport</a></h4>
-                                        <p class="price">$200</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-thumb">
-                                        <img
-                                            class="img-responsive"
-                                            src="images/shop/products/product-2.jpg"
-                                            alt="product-img"
-                                            />
-                                        <div class="preview-meta">
-                                            <ul>
-                                                <li>
-                                                    <span
-                                                        data-toggle="modal"
-                                                        data-target="#product-modal"
-                                                        >
-                                                        <i class="tf-ion-ios-search-strong"></i>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h4><a href="product-single.html">Rainbow Shoes</a></h4>
-                                        <p class="price">$200</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-thumb">
-                                        <img
-                                            class="img-responsive"
-                                            src="images/shop/products/product-3.jpg"
-                                            alt="product-img"
-                                            />
-                                        <div class="preview-meta">
-                                            <ul>
-                                                <li>
-                                                    <span
-                                                        data-toggle="modal"
-                                                        data-target="#product-modal"
-                                                        >
-                                                        <i class="tf-ion-ios-search-strong"></i>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h4><a href="product-single.html">Strayhorn SP</a></h4>
-                                        <p class="price">$230</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-thumb">
-                                        <img
-                                            class="img-responsive"
-                                            src="images/shop/products/product-4.jpg"
-                                            alt="product-img"
-                                            />
-                                        <div class="preview-meta">
-                                            <ul>
-                                                <li>
-                                                    <span
-                                                        data-toggle="modal"
-                                                        data-target="#product-modal"
-                                                        >
-                                                        <i class="tf-ion-ios-search-strong"></i>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h4><a href="product-single.html">Bradley Mid</a></h4>
-                                        <p class="price">$200</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-thumb">
-                                        <img
-                                            class="img-responsive"
-                                            src="images/shop/products/product-5.jpg"
-                                            alt="product-img"
-                                            />
-                                        <div class="preview-meta">
-                                            <ul>
-                                                <li>
-                                                    <span
-                                                        data-toggle="modal"
-                                                        data-target="#product-modal"
-                                                        >
-                                                        <i class="tf-ion-ios-search-strong"></i>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h4><a href="product-single.html">Rainbow Shoes</a></h4>
-                                        <p class="price">$200</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-thumb">
-                                        <img
-                                            class="img-responsive"
-                                            src="images/shop/products/product-6.jpg"
-                                            alt="product-img"
-                                            />
-                                        <div class="preview-meta">
-                                            <ul>
-                                                <li>
-                                                    <span
-                                                        data-toggle="modal"
-                                                        data-target="#product-modal"
-                                                        >
-                                                        <i class="tf-ion-ios-search-strong"></i>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h4><a href="product-single.html">Rainbow Shoes</a></h4>
-                                        <p class="price">$200</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-thumb">
-                                        <span class="bage">Sale</span>
-                                        <img
-                                            class="img-responsive"
-                                            src="images/shop/products/product-7.jpg"
-                                            alt="product-img"
-                                            />
-                                        <div class="preview-meta">
-                                            <ul>
-                                                <li>
-                                                    <span
-                                                        data-toggle="modal"
-                                                        data-target="#product-modal"
-                                                        >
-                                                        <i class="tf-ion-ios-search-strong"></i>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h4><a href="product-single.html">Rainbow Shoes</a></h4>
-                                        <p class="price">$200</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-thumb">
-                                        <img
-                                            class="img-responsive"
-                                            src="images/shop/products/product-8.jpg"
-                                            alt="product-img"
-                                            />
-                                        <div class="preview-meta">
-                                            <ul>
-                                                <li>
-                                                    <span
-                                                        data-toggle="modal"
-                                                        data-target="#product-modal"
-                                                        >
-                                                        <i class="tf-ion-ios-search-strong"></i>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h4><a href="product-single.html">Rainbow Shoes</a></h4>
-                                        <p class="price">$200</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-thumb">
-                                        <img
-                                            class="img-responsive"
-                                            src="images/shop/products/product-9.jpg"
-                                            alt="product-img"
-                                            />
-                                        <div class="preview-meta">
-                                            <ul>
-                                                <li>
-                                                    <span
-                                                        data-toggle="modal"
-                                                        data-target="#product-modal"
-                                                        >
-                                                        <i class="tf-ion-ios-search-strong"></i>
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h4><a href="product-single.html">Rainbow Shoes</a></h4>
-                                        <p class="price">$200</p>
-                                    </div>
-                                </div>
-                            </div>
+                                </div> 
+                            </c:forEach>
+
 
                             <!-- Modal -->
                             <div class="modal product-modal fade" id="product-modal">
@@ -833,7 +564,26 @@
                                 </div>
                             </div>
                             <!-- /.modal -->
+
                         </div>
+                        <nav  aria-label="Page navigation example " >
+                            <ul class="pagination "  style=" display: flex;
+                                justify-content: center;">
+                                <li class="page-item" >
+                                    <a class="page-link" href="#" aria-label="Previous" style="color: #000">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#" style="color: #000">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next" style="color: #000">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,10 @@
         <servlet-name>Shop_slidebarController</servlet-name>
         <servlet-class>controler.Shop_slidebarController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FilerCategoryController</servlet-name>
+        <servlet-class>controler.FilerCategoryController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeControler</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Shop_slidebarController</servlet-name>
         <url-pattern>/shop</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FilerCategoryController</servlet-name>
+        <url-pattern>/filter-category</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
