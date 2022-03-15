@@ -574,9 +574,10 @@
                                         <span aria-hidden="true">&laquo;</span>
                                     </a>
                                 </li>
-                                <li class="page-item"><a class="page-link" href="#" style="color: #000">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <c:forEach begin="1" end="${totalPage}" var="i">
+                                <li class="page-item"><a class="page-link" href="shop?page=${i}" style="color: #000">1</a></li>
+                                </c:forEach>
+                                
                                 <li class="page-item">
                                     <a class="page-link" href="#" aria-label="Next" style="color: #000">
                                         <span aria-hidden="true">&raquo;</span>

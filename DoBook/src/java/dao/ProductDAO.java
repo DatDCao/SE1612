@@ -76,4 +76,19 @@ public class ProductDAO {
         return list;
     }
     
+    public int getTatalProduc(){
+        List<Product> list = new ArrayList<>();
+        try {
+            String sql = "SELECT count(id) FROM [DOBOOK].[dbo].[Product] ";
+            Connection conn = new DBContext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
 }
