@@ -477,7 +477,7 @@
                     <div class="col-md-9">
                         <div class="row">
                             <c:forEach items="${listProducts}" var="P">
-                                <div class="col-md-4">
+                                <div class=" col-md-4 col-sm-6 col-xs-12">
                                     <div class="product-item">
                                         <div class="product-thumb">
                                             <span class="bage">Sale</span>
@@ -485,6 +485,7 @@
                                                 class="img-responsive"
                                                 src="${P.imageUrl}"
                                                 alt="product-img"
+                                                style=" height: 300px"
                                                 />
                                             <div class="preview-meta">
                                                 <ul>
