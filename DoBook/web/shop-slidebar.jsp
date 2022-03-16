@@ -576,7 +576,7 @@
                                     </a>
                                 </li>
                                 <c:forEach begin="1" end="${totalPage}" var="i">
-                                <li class="page-item"><a class="page-link" href="shop?page=${i}" style="color: #000">1</a></li>
+                                <li class="page-item"><a class="page-link" href="shop?page=${i}" style="color: #000">${i}</a></li>
                                 </c:forEach>
                                 
                                 <li class="page-item">

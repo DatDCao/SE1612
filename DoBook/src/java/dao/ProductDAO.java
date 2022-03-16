@@ -76,7 +76,7 @@ public class ProductDAO {
         return list;
     }
     
-    public int getTatalProduc(){
+    public int getTotalProduc(){
         List<Product> list = new ArrayList<>();
         try {
             String sql = "SELECT count(id) FROM [DOBOOK].[dbo].[Product] ";
@@ -88,6 +88,49 @@ public class ProductDAO {
             }
         } catch (Exception ex) {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
+    public List<Product> getProductsWithPagging(int page, int PAGE_SIZE) {
+        List<Product> list = new ArrayList<>();
+        try {
+            String sql = "select *  from Product order by id\n"
+                    + "offset (?-1)*? row fetch next ? rows only";
+            Connection conn = new DBContext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, page);
+            ps.setInt(2, PAGE_SIZE);
+            ps.setInt(3, PAGE_SIZE);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Product product = Product.builder()
+                        .id(rs.getInt(1))
+                        .name(rs.getString(2))
+                        .quantity(rs.getInt(3))
+                        .price(rs.getDouble(4))
+                        .description(rs.getString(5))
+                        .imageUrl(rs.getString(6))
+                        .createDate(rs.getString(7))
+                        .categoryId(rs.getInt(8)).build();
+                list.add(product);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+
+    public int getTotalProducts() {
+        try {
+            String sql = "SELECT count(id) FROM [DOBOOK].[dbo].[Product]";
+            Connection conn = new DBContext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return 0;
     }

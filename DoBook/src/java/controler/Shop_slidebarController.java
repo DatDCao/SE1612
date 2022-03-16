@@ -37,8 +37,24 @@ public class Shop_slidebarController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         List<Category> listCategories = new CategoryDAO().getAllCategories();
         List<Product> listProducts = new ProductDAO().getAllProducts();
-        
         request.setAttribute("listCategories", listCategories);
+        final int PAGE_SIZE = 15;
+        int page = 1;
+        String pageStr = request.getParameter("page");
+        if (pageStr != null) {
+            page = Integer.parseInt(pageStr);
+        }
+
+        ProductDAO productDAO = new ProductDAO();
+//        List<Product> listProducts = productDAO.getProductsWithPagging(page, PAGE_SIZE);
+        int totalProducts = productDAO.getTotalProducts();
+        int totalPage = totalProducts / PAGE_SIZE;
+        if (totalProducts % PAGE_SIZE != 0) {
+            totalPage += 1;
+        }
+        request.setAttribute("page", page);
+        request.setAttribute("totalPage", totalPage);
+        
         request.setAttribute("listProducts", listProducts);
          request.getRequestDispatcher("shop-slidebar.jsp").forward(request, response);
     }
