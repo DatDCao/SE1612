@@ -35,13 +35,33 @@ public class FilerCategoryController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         List<Category> listCategories = new CategoryDAO().getAllCategories();
         request.setAttribute("listCategories", listCategories);
-        
         int categoryId = Integer.parseInt(request.getParameter("categoryId"));
+
+//        int pagesize = 10;
+//        int page = 1;
+//        String pageStr = request.getParameter("page");
+//        if (pageStr != null) {
+//            page = Integer.parseInt(pageStr);
+//        }
+//
+//        ProductDAO productDAO = new ProductDAO();
+//        List<Product> listProducts = productDAO.getProductsWithPagging(page, pagesize);
+//        int totalProducts = productDAO.getTotalProducts();
+//        int totalPage = totalProducts / pagesize;
+//        if (totalProducts % pagesize != 0) {
+//            totalPage += 1;
+//        }
+//        request.setAttribute("page", page);
+//        request.setAttribute("totalPage", totalPage);
+//        
+//        List<Product> listProduct = new ProductDAO().getProductsByCategoryID_andPaging(categoryId, page, pagesize);
+        
         List<Product> listProduct = new ProductDAO().getProductsByCategoryID(categoryId);
         request.setAttribute("listProducts", listProduct);
+        request.setAttribute("category", categoryId);
         request.getRequestDispatcher("shop-slidebar.jsp").forward(request, response);
     }
 

@@ -36,9 +36,10 @@ public class Shop_slidebarController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         List<Category> listCategories = new CategoryDAO().getAllCategories();
-        List<Product> listProducts = new ProductDAO().getAllProducts();
+//        List<Product> listProducts = new ProductDAO().getAllProducts();
         request.setAttribute("listCategories", listCategories);
-        final int PAGE_SIZE = 15;
+        
+        int pagesize = 9;
         int page = 1;
         String pageStr = request.getParameter("page");
         if (pageStr != null) {
@@ -46,12 +47,13 @@ public class Shop_slidebarController extends HttpServlet {
         }
 
         ProductDAO productDAO = new ProductDAO();
-//        List<Product> listProducts = productDAO.getProductsWithPagging(page, PAGE_SIZE);
+        List<Product> listProducts = productDAO.getProductsWithPagging(page, pagesize);
         int totalProducts = productDAO.getTotalProducts();
-        int totalPage = totalProducts / PAGE_SIZE;
-        if (totalProducts % PAGE_SIZE != 0) {
+        int totalPage = totalProducts / pagesize;
+        if (totalProducts % pagesize != 0) {
             totalPage += 1;
         }
+        
         request.setAttribute("page", page);
         request.setAttribute("totalPage", totalPage);
         
