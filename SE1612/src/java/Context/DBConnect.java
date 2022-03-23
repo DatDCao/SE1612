@@ -24,7 +24,7 @@ public class DBConnect {
     /*Insert your other code right after this comment*/
  /*Change/update information of your database connection, DO NOT change name of instance variables in this class*/
     private final String serverName = "localhost";
-    private final String dbName = "Shopping";
+    private final String dbName = "DOBOOKSQL";
     private final String portNumber = "1433";
     private final String userID = "sa";
     private final String password = "123456";
