@@ -8,100 +8,82 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Login V15</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
-</head>
-<body>
-	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
-					<span class="login100-form-title-1">
-						Sign In
-					</span>
-				</div>
-                            
-				<form class="login100-form validate-form" action="login" method="POST">
-                                     <h4 style="color: red;">${err}</h4>
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Username</span>
-                                                <input class="input100" type="text" name="username" placeholder="Enter username" value="${username}">
-						<span class="focus-input100"></span>
-					</div>
+    <head>
+        <title>DoBook | Login</title>
+        <%@include file="components/link.jsp" %>
+    </head>
+    <body >
+        <section class="signin-page account" style="margin: auto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3" style="margin: auto">
+                        <div class="block text-center">
+                            <a class="logo" href="home">
+                                <img src="images/logo.png" alt="" />
+                            </a>
+                            <h2 class="text-center">Welcome Back</h2>
+                            <form class="text-left clearfix" action="login" method="POST">
+                                <div class="form-group">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        name="username" placeholder="Username" value="${username}"
+                                        />
+                                </div>
+                                <div class="form-group">
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        name="password" placeholder="Password"value="${password}"
+                                        />
+                                </div>
+                                <div class="flex-sb-m w-full p-b-30">
+                                    <div class="contact100-form-checkbox">
+                                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember">
+                                        <label class="label-checkbox100" for="ckb1">
+                                            Remember me
+                                        </label>
+                                    </div>
 
-					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="password" placeholder="Enter password"value="${password}">
-						<span class="focus-input100"></span>
-					</div>
+                                    <div>
+                                        <a href="forgot" class="txt1">
+                                            Forgot Password?
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <h6 style="color: red;margin-bottom: 10px">${err}</h6>
+                                    <button type="submit" value="Login" class="btn btn-main text-center">
+                                        Login
+                                    </button>
+                                </div>
+                            </form>
+                            <p class="mt-20">
+                                New in this site ?<a href="createAccount"> Create New Account</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
 
-					<div class="flex-sb-m w-full p-b-30">
-						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember">
-							<label class="label-checkbox100" for="ckb1">
-								Remember me
-							</label>
-						</div>
+        <!--===============================================================================================-->
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/animsition/js/animsition.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/select2/select2.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/daterangepicker/moment.min.js"></script>
+        <script src="vendor/daterangepicker/daterangepicker.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/countdowntime/countdowntime.js"></script>
+        <!--===============================================================================================-->
+        <script src="js/main.js"></script>
 
-						<div>
-							<a href="forgot" class="txt1">
-								Forgot Password?
-							</a>
-						</div>
-					</div>
-                                               
-					<div class="container-login100-form-btn" >
-                                            <input class="login100-form-btn" type="submit" value="Login"/>
-                                            
-                                            <a class="login100-form-btn" href="createAccount" style="margin-left: 40px"/>Create Account</a>
-					</div>
-                                                
-				</form>
-			</div>
-		</div>
-	</div>
-	
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
-</body>
+    </body>
 </html>

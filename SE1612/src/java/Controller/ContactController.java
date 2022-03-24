@@ -5,22 +5,23 @@
  */
 package Controller;
 
-import DAO.LoginDAO;
+import DAO.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Account;
-import model.SendMail;
+import model.Product;
 
 /**
  *
- * @author Happy-2001
+ * @author docao
  */
-public class ForgotController extends HttpServlet {
+public class ContactController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,9 +35,18 @@ public class ForgotController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            request.getRequestDispatcher("forgot.jsp").forward(request, response);
+        ProductDAO dao = new ProductDAO();
+        List<Product> listPro = dao.getProbyCategoryid(6, 7);
+        request.setAttribute("ListP", listPro);
+        HttpSession session = request.getSession();
+        Object objacc = session.getAttribute("account");
+        if(objacc!=null){
+            Account acc = (Account) objacc;
+            request.setAttribute("disname", acc.getDisplayname());
+            request.setAttribute("roll", acc.getRollid());
         }
+        request.getSession().setAttribute("URLHistory", "home");
+        request.getRequestDispatcher("contact.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -65,33 +75,7 @@ public class ForgotController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
-        String mail = request.getParameter("mail");
-        SendMail sendmail = new SendMail();
-        LoginDAO loginDAO = new LoginDAO();
-        Account acc = loginDAO.getAccountByMail(mail);
-        String subject = "Your account has been processing.";
-        String message = "<!DOCTYPE html>\n"
-                + "<html lang=\"en\">\n"
-                + "\n"
-                + "<head>\n"
-                + "</head>\n"
-                + "\n"
-                + "<body>\n"
-                + "    <h3 style=\"color: blue;\">Your account has been processing.</h3>\n"
-                + "    <div>User Name :" + acc.getName() + "</div>\n"
-                + "    <div>Password :" + acc.getPassword() + "</div>\n"
-                + "    <div>Name : " + acc.getDisplayname() + "</div>\n"
-                + "    <div>address : " + acc.getAddress() + "</div>\n"
-                + "    <div>Phone : " + acc.getPhone() + "</div>\n"
-                + "    <h3 style=\"color: blue;\">Thank you very much!</h3>\n"
-                + "\n"
-                + "</body>\n"
-                + "\n"
-                + "</html>";
-        SendMail.send(mail, subject, message, "docaodat.dev@gmail.com", "dat432001");
-        response.sendRedirect("login");
-
+        processRequest(request, response);
     }
 
     /**

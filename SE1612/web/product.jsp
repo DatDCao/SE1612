@@ -11,6 +11,7 @@
         <title>Colo Shop Product</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
         <meta name="description" content="Colo Shop Template">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
@@ -79,22 +80,25 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="home">colo<span>shop</span></a>
+							<a href="home">DoBook<span></span></a>
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="home">home</a></li>
 								<li><a href="productcontrol">Shop</a></li>
-								<li><a href="#">contact</a></li>
+								<li><a href="contact">contact</a></li>
 							</ul>
 							<ul class="navbar_user">
                                                             <form action="Search">
                                                             <li><input type="text" placeholder="Search.." name="search"> <button><i  class="fa fa-search" aria-hidden="true"></i></li>
-								<li><a href="login"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+								<li><div style="display: flex">
+                                                    <a href="login"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                                    <c:if test="${account!=null}"><a style="width: 100%">${disname} </a>  </c:if>
+                                                </div></li>
 								<li class="checkout">
 									<a href="Checkout">
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<span id="checkout_items" class="checkout_items">${carts.size()}</span>
+										<span id="checkout_items" class="checkout_items" >${carts.size() eq "0" ? "0":carts.size()}</span>
 									</a>
 								</li>
 							</ul>
@@ -123,14 +127,14 @@
 
                         <!-- Sidebar -->
 
-                        <div class="sidebar">
+                        <div class="sidebar" >
                             <div class="sidebar_section">
                                 <div class="sidebar_title">
                                     <h5>Product Category</h5>
                                 </div>
-                                <ul class="sidebar_categories">
+                                <ul class="sidebar_categories" >
                                     <c:forEach items="${ListC}" var="c">
-                                        <li class="list-group-item"><a href="filter-category?id=${c.id}">${c.name}</a></li>
+                                        <li class="list-group-item" style="width: 230px; height:50px "><a href="filter-category?id=${c.id}">${c.name}</a></li>
                                         </c:forEach>
                                 </ul>
                             </div>
@@ -168,7 +172,7 @@
                                                         
                                                         <nav aria-label="Page navigation example">
                                                             <ul class="pagination justify-content-end">
-                                                                <li class="page-item ${page==1?"disabled":""}"><a class="page-link" href="productcontrol?page=${page-1}" >Previous</a></li>
+                                                                <li class="page-item ${page==0?"disabled":""}"><a class="page-link" href="productcontrol?page=${page-1}" >Previous</a></li>
                                                                     <c:forEach begin="1" end="${totalPage}" var="i">
                                                                     <li class="page-item ${i == page?"active":""}"><a class="page-link" href="productcontrol?page=${i}">${i}</a></li>
                                                                     </c:forEach>
@@ -197,7 +201,7 @@
                                                     <div class="product product_filter">
                                                         <a href="item?Product=${P.id}">
                                                         <div class="product_image">
-                                                            <img src="${P.imageURL}" alt="">
+                                                            <img src="${P.imageURL}" style="height: 230px" alt="">
                                                         </div>
                                                         <div class="favorite"></div>
                                                         <div class="product_info">
@@ -326,38 +330,7 @@
 
             <!-- Footer -->
 
-            <footer class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
-                                <ul class="footer_nav">
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">FAQs</a></li>
-                                    <li><a href="contact.html">Contact us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
-                                <ul>
-                                    <li><a href="https://www.facebook.com/profile.php?id=100014453103092" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="https://github.com/Happy-2001" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                                    <li><a href="https://www.instagram.com/th.buta/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                    <li><a href="https://www.pinterest.com/Dinos0801/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer_nav_container">
-                                <div class="cr">©2020 All Rights Reserverd. Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://github.com/Happy-2001">Đào Phúc Thạch</a> &amp; distributed by <a href="home">ColoShop</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+           <%@include file="components/footerComponent.jsp" %>
 
         </div>
 

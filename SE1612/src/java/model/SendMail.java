@@ -75,15 +75,15 @@ public class SendMail {
                 + "\n"
                 + "<body>\n"
                 + "    <h3 style=\"color: blue;\">Your order has been processing.</h3>\n"
-                + "    <div>Full Name :Le Hong Quan</div>\n"
-                + "    <div>Phone : 0866823499</div>\n"
-                + "    <div>address : Vinh Hung, Vinh Loc, Thanh Hoa</div>\n"
+                + "    <div>Full Name :Do Cao Dat</div>\n"
+                + "    <div>Phone : )(41283155</div>\n"
+                + "    <div>address : Truong Son, An Lao, Hai Phong</div>\n"
                 + "    <h3 style=\"color: blue;\">Thank you very much!</h3>\n"
                 + "\n"
                 + "</body>\n"
                 + "\n"
                 + "</html>";
-        SendMail.send("Email đích", subject, message, "Email Nguồn", "Mật khẩu email nguồn");
+        SendMail.send("docaodat432001@gmail.com", subject, message, "docaodat.dev@gmail.com", "dat432001");
         //vd để gửi email tới "dich@gmail.com" bằng email "nguon@gmail.com" pass "123456"
 //        SendMail.send("dich@gmail.com", subject, message, "nguon@gmail.com", "123456");
     }

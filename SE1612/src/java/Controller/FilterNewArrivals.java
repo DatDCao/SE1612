@@ -37,16 +37,16 @@ public class FilterNewArrivals extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
            String name = request.getParameter("name");
            ProductDAO dao = new ProductDAO();
-           if(name.equalsIgnoreCase("livingroom") || name.isEmpty()){
-               List<Product> listPro= dao.getProbyCategoryid(6,7);
-               request.setAttribute("ListP", listPro);
-           }
-           if(name.equalsIgnoreCase("bedroom")){
+           if(name.equalsIgnoreCase("Art") || name.isEmpty()){
                List<Product> listPro= dao.getProbyCategoryid(1,2);
                request.setAttribute("ListP", listPro);
            }
-           if(name.equalsIgnoreCase("office")){
-               List<Product> listPro= dao.getProbyCategoryid(10,8);
+           if(name.equalsIgnoreCase("Business")){
+               List<Product> listPro= dao.getProbyCategoryid(3,4);
+               request.setAttribute("ListP", listPro);
+           }
+           if(name.equalsIgnoreCase("Dictionary")){
+               List<Product> listPro= dao.getProbyCategoryid(5,6);
                request.setAttribute("ListP", listPro);
            }
            request.getRequestDispatcher("index.jsp").forward(request, response);

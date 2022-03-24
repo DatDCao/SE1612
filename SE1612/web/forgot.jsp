@@ -9,34 +9,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V15</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
+	<title>Request Password</title>
+        <%@include file="components/link.jsp" %>
 </head>
 <body>
-	
+	<section class="forget-password-page account">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3" style="margin: auto">
+            <div class="block text-center">
+              <a class="logo" href="home">
+                <img src="images/logo.png" alt="" />
+              </a>
+              <h2 class="text-center">Welcome Back</h2>
+              <form class="text-left clearfix" action="forgot" method="POST">
+                <p>
+                  Please enter the email address for your account. A
+                  verification code will be sent to you. Once you have received
+                  the verification code, you will be able to choose a new
+                  password for your account.
+                </p>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    placeholder="Account email address"
+                    name="mail"
+                  />
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-main text-center" value="Send Mail">
+                    Request password reset
+                  </button>
+                </div>
+              </form>
+              <p class="mt-20"><a href="login">Back to log in</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
