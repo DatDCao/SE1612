@@ -43,12 +43,14 @@ public class AddProduct extends HttpServlet {
             if (objacc != null) {
                 Account acc = (Account) objacc;
                 if (acc.getRollid() == 2) {
+                    
                     request.getRequestDispatcher("addProduct.jsp").forward(request, response);
                 }  
                 
-            } 
-            response.sendRedirect("login");
-            
+            }else{ 
+//            response.sendRedirect("login");
+request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
         }
     }
 
@@ -91,9 +93,12 @@ public class AddProduct extends HttpServlet {
             String suppliers = request.getParameter("suppliers");
             int categoryid = Integer.parseInt(request.getParameter("categoryid"));
             Product x = new Product(id, name, quantity, price, des, image, date, categoryid,suppliers);
+            
+//            response.getWriter().print(x.toString());
             ProductDAO u = new ProductDAO();
             u.insert(x);
             request.getRequestDispatcher("manager").forward(request, response);
+
         }
     }
 

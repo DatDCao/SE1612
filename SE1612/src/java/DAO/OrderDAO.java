@@ -25,7 +25,7 @@ public class OrderDAO {
 
     public int returnid(Order order) {
         try {
-            String sql = "INSERT INTO [Shopping].[dbo].[orders]\n"
+            String sql = "INSERT INTO [DOBOOKSQL].[dbo].[orders]\n"
                     + "           ([account_id]\n"
                     + "           ,[totalPrice]\n"
                     + "           ,[note])\n"

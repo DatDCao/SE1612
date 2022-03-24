@@ -38,14 +38,14 @@
                     <div class="row">
                         <div class="col-lg-12 text-right">
                             <div class="logo_container">
-                                <a href="home">colo<span>shop</span></a>
+                                <a href="home">DoBook<span></span></a>
                             </div>
                             <nav class="navbar">
                                 <ul class="navbar_menu">
                                     <li><a href="manager">Manager Product</a></li>
                                     <li><a href="home">home</a></li>
-                                    <li><a href="productcontrol">Product</a></li>
-                                    <li><a href="#">contact</a></li>
+                                    <li><a href="productcontrol">Shop</a></li>
+                                    <li><a href="contact">contact</a></li>
                                 </ul>
                                 <ul class="navbar_user">
                                     <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
@@ -71,39 +71,39 @@
 
         </header>
 
-        <section class="py-5 px-4 px-lg-5 " style="padding-top:7rem !important;min-height: 500px">                                                              
-            <form action="addProduct" method="POST">
+        <section class="py-5 px-4 px-lg-5 " style="padding-top:7rem !important;min-height: 500px; margin: auto">                                                              
+            <form action="addProduct" method="POST" style="margin:0 500px">
                 <table>
-                    <tr>
-                        <td>ID:</td><td><input type="text" name="id" /></td>
+                    <tr >
+                        <td >ID:</td><td><input style="margin: 10px 0px" type="text" name="id" /></td>
                     </tr>
                     <tr>
-                        <td>Name:</td><td><input type="text" name="name"/></td>
+                        <td>Name:</td><td><input style="margin: 10px 0px" type="text" name="name"/></td>
                     </tr>
                     <tr>
-                        <td>Price:</td><td><input type="text" name="price"/></td>
+                        <td>Price:</td><td><input style="margin: 10px 0px" type="text" name="price"/></td>
                     </tr>
                     <tr>
-                        <td>Quantity:</td><td><input type="text" name="quantity"/></td>
+                        <td>Quantity:</td><td><input style="margin: 10px 0px" type="text" name="quantity"/></td>
                     </tr>
                     <tr>
-                        <td>Description:</td><td><input type="text" name="des"/></td>
+                        <td>Description:</td><td><input style="margin: 10px 0px" type="text" name="des"/></td>
                     </tr>
                     <tr>
-                        <td>ImageURL:</td><td><input type="text" name="image"/></td>
+                        <td>ImageURL:</td><td><input style="margin: 10px 0px" type="text" name="image"/></td>
                     </tr>
                     <tr>
-                        <td>Created_Date:</td><td><input type="date" name="date"/></td>
+                        <td>Created_Date:</td><td><input style="margin: 10px 0px" type="date" name="date"/></td>
                     </tr>
                     <tr>
-                        <td>CategoryID:</td><td><input type="text" name="categoryid"/></td>
+                        <td>CategoryID:  </td><td><input style="margin: 10px 0px" type="text" name="categoryid"/></td>
                     </tr>
                     <tr>
-                        <td>Suppliers:</td><td><input type="text" name="suppliers"/></td>
+                        <td>Suppliers:</td><td><input style="margin: 10px 0px" type="text" name="suppliers"/></td>
                     </tr>
 
 
-                    <tr><td><input type="submit" value="Create"/></td></tr>
+                    <tr><td><input style="margin: 10px 0px" type="submit" value="Create"/></td></tr>
                 </table>
             </form>
         </section>

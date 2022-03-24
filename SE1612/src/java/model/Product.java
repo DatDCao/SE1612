@@ -32,6 +32,7 @@ public class Product {
     public Product(){
         
     }
+    
 //public Product( String name, int quantity, double price, String description, String imageURL, String createdDate, int categoryid) {
 //
 //        this.name = name;
@@ -135,8 +136,10 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "id=" + id + ", name=" + name + ", quantity=" + quantity + ", price=" + price + ", description=" + description + ", imageURL=" + imageURL + ", createdDate=" + createdDate + ", categoryid=" + categoryid + '}';
+        return "Product{" + "id=" + id + ", name=" + name + ", quantity=" + quantity + ", price=" + price + ", description=" + description + ", imageURL=" + imageURL + ", createdDate=" + createdDate + ", categoryid=" + categoryid + ", suppliers=" + suppliers + '}';
     }
+
+    
     
     
 }

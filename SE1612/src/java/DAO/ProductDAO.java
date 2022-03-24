@@ -220,7 +220,7 @@ public class ProductDAO {
     public boolean update(Product product, int id) {
         int check = 0;
         try {
-            String sql = "UPDATE [Shopping].[dbo].[Product]\n"
+            String sql = "UPDATE [DOBOOKSQL].[dbo].[Product]\n"
                     + "   SET [name] = ?\n"
                     + "      ,[quantity] = ?\n"
                     + "      ,[price] = ?\n"
@@ -253,7 +253,7 @@ public class ProductDAO {
 
     public void insert(Product product) {
         try {
-            String sql = "INSERT INTO [Shopping].[dbo].[Product]\n"
+            String sql = "INSERT INTO [DOBOOKSQL].[dbo].[Product]\n"
                     + "           ([id]\n"
                     + "           ,[name]\n"
                     + "           ,[quantity]\n"
@@ -287,10 +287,8 @@ public class ProductDAO {
 
     public static void main(String[] args) {
         ProductDAO dao = new ProductDAO();
-        List<Product> list = dao.getallPro();
-        for (Product o : list) {
-            System.out.println(o);
-        }
+        Product a = new Product(71, "123", 12, 12, "123123123123", "123123123123", "123123123", 0);
+        dao.insert(a);
     }
 
 }

@@ -25,7 +25,7 @@ public class OrderDetailDAO {
         
 
         try {
-            String sql = "INSERT INTO [Shopping].[dbo].[Detail]\n"
+            String sql = "INSERT INTO [DOBOOKSQL].[dbo].[Detail]\n"
                     + "           ([order_id]\n"
                     + "           ,[productname]\n"
                     + "           ,[productimage]\n"

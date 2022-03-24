@@ -114,13 +114,13 @@
 
             <!-- Slider -->
 
-            <div class="main_slider" style="background-image:url(images/pexels-kate-trifo-3992002.jpg)">
+            <div class="main_slider" style="background-image:url(images/19.jpg)">
                 <div class="container fill_height">
                     <div class="row align-items-center fill_height">
                         <div class="col">
-                            <div class="main_slider_content">
-                                <h6>Spring / Summer Collection 2022</h6>
-                                <h1>Get up to 30% Off New Arrivals</h1>
+                            <div class="main_slider_content" >
+                                <h5 style="color: white">Spring / Summer Collection 2022</h5>
+                                <h1 style="color: white">Get up to 40% Off New Arrivals</h1>
                                 <div class="red_button shop_now_button"><a href="productcontrol">Shop now</a></div>
                             </div>
                         </div>
@@ -252,7 +252,6 @@
             <%@include file="components/footerComponent.jsp" %>
 
         </div>
-
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="styles/bootstrap4/popper.js"></script>
         <script src="styles/bootstrap4/bootstrap.min.js"></script>
@@ -261,6 +260,5 @@
         <script src="plugins/easing/easing.js"></script>
         <script src="js/custom.js"></script>
     </body>
-
 </html>
 

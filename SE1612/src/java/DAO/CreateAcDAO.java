@@ -23,7 +23,7 @@ public class CreateAcDAO {
     public Account insertsql(Account ac) {
         
         try {
-            String sql = "INSERT INTO [Shopping].[dbo].[account]\n"
+            String sql = "INSERT INTO [DOBOOKSQL].[dbo].[account]\n"
                     + "           ([username]\n"
                     + "           ,[password]\n"
                     + "           ,[displayname]\n"

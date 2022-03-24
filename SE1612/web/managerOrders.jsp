@@ -44,7 +44,7 @@
 							<ul class="navbar_menu">
                                                             <li><a href="manager">Manager Product</a></li>
 								<li><a href="home">home</a></li>
-								<li><a href="productcontrol">Product</a></li>
+								<li><a href="productcontrol">Shop</a></li>
 								<li><a href="contact">contact</a></li>
 							</ul>
 							<ul class="navbar_user">
